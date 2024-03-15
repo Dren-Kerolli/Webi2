@@ -13,8 +13,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css"
@@ -32,8 +31,9 @@
     <!-- header section starts  -->
 
 
+
     <header class="header">
-  <a href="index.php" class="logo"><img src="images/post.png" class="img-fluid" style="width: 120px;height: auto;"alt=""></span></a>
+  <a href="index.php" class="logo"><img src="images/post.png" class="img-fluid" style="width:120px;height:auto" alt=""></span></a>
 
 
 
@@ -42,7 +42,7 @@
     <a href="#about" data-translate="about">about</a>
     <a href="#services" data-translate="services">services</a>
     <a href="#projects" data-translate="projects">projects</a>
-    <a href="#pricing" data-translate="pricing">pricing</a>
+
     <a href="#contact" data-translate="contact">contact</a>
     <a href="#blogs" data-translate="blogs">blogs</a>
   </nav>
@@ -50,7 +50,8 @@
   <div class="icons">
     <div id="menu-btn" class="fas fa-bars" data-translate="menu"></div>
     <div id="info-btn" class="fas fa-info-circle" data-translate="info"></div>
-  
+    <div id="search-btn" class="fas fa-search" data-translate="search"></div>
+    <div id="login-btn" class="fas fa-user d-none" data-translate="login"></div>
   </div>
 
   <form action="" class="search-form">
@@ -80,7 +81,7 @@
     var translations = {
       'home': {
         'en': 'home',
-        'sq': 'shtëpia'
+        'sq': 'ballina'
       },
       'about': {
         'en': 'about',
@@ -94,10 +95,6 @@
         'en': 'projects',
         'sq': 'projektet'
       },
-      'pricing': {
-        'en': 'pricing',
-        'sq': 'çmimet'
-      },
       'contact': {
         'en': 'contact',
         'sq': 'kontakti'
@@ -105,10 +102,6 @@
       'blogs': {
         'en': 'blogs',
         'sq': 'blogjet'
-      },
-      'search here...': {
-        'en': 'search here...',
-        'sq': 'kerko këtu...'
       },
       'login form': {
         'en': 'login form',
@@ -164,23 +157,27 @@
       <div id="close-contact-info" class="fas fa-times"></div>
 
       <div class="info">
+        <i class="fas fa-user-tie"></i>
+        <h3>Vitantonio Danese</h3>
+        <p>CEO</p>
+      </div>
+
+      <div class="info">
         <i class="fas fa-phone"></i>
         <h3>phone number</h3>
-        <p>+123-456-7890</p>
-        <p>+111-222-3333</p>
+        <p>+383 (0) 43 88 11 75</p>
       </div>
 
       <div class="info">
         <i class="fas fa-envelope"></i>
         <h3>email address</h3>
-        <p>example@gmail.com</p>
-        <p>example2@gmail.com</p>
+        <p>antaura.k@gmail.com</p>
       </div>
 
       <div class="info">
         <i class="fas fa-map-marker-alt"></i>
         <h3>office address</h3>
-        <p>mumbai, india - 400104</p>
+        <p>Prishtinë, 10000</p>
       </div>
 
       <div class="share">
@@ -607,58 +604,6 @@
     </section>
 
     <!-- reviews section ends -->
-
-    <!-- pricing section starts  -->
-
-    <section class="pricing" id="pricing">
-      <h1 class="heading">our pricing</h1>
-
-      <div class="box-container">
-        <div class="box">
-          <i class="fas fa-home"></i>
-          <h3>basic plan</h3>
-          <div class="price"><span>$</span>250<span>/mo</span></div>
-          <div class="list">
-            <p>interior design</p>
-            <p>refurbishment</p>
-            <p>material supply</p>
-            <p>maintenance</p>
-            <p>24/7 support</p>
-          </div>
-          <a href="#" class="btn">choose plan</a>
-        </div>
-
-        <div class="box">
-          <i class="fas fa-building"></i>
-          <h3>premium plan</h3>
-          <div class="price"><span>$</span>650<span>/mo</span></div>
-          <div class="list">
-            <p>interior design</p>
-            <p>refurbishment</p>
-            <p>material supply</p>
-            <p>maintenance</p>
-            <p>24/7 support</p>
-          </div>
-          <a href="#" class="btn">choose plan</a>
-        </div>
-
-        <div class="box">
-          <i class="fas fa-city"></i>
-          <h3>ultimate plan</h3>
-          <div class="price"><span>$</span>1250<span>/mo</span></div>
-          <div class="list">
-            <p>interior design</p>
-            <p>refurbishment</p>
-            <p>material supply</p>
-            <p>maintenance</p>
-            <p>24/7 support</p>
-          </div>
-          <a href="#" class="btn">choose plan</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- pricing section ends -->
 
     <!-- contact section starts  -->
 
