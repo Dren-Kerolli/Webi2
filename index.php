@@ -75,118 +75,45 @@
 </header>
 
 
-<script>
-  function changeLanguage(language) {
-    // Lista e tekstesh në të dy gjuhët
-    var translations = {
-      'home': {
-        'en': 'home',
-        'sq': 'ballina'
-      },
-      'about': {
-        'en': 'about',
-        'sq': 'rreth nesh'
-      },
-      'services': {
-        'en': 'services',
-        'sq': 'shërbimet'
-      },
-      'projects': {
-        'en': 'projects',
-        'sq': 'projektet'
-      },
-      'contact': {
-        'en': 'contact',
-        'sq': 'kontakti'
-      },
-      'blogs': {
-        'en': 'blogs',
-        'sq': 'blogjet'
-      },
-      'login form': {
-        'en': 'login form',
-        'sq': 'forma e hyrjes'
-      },
-      'enter your email': {
-        'en': 'enter your email',
-        'sq': 'vendos emailin tënd'
-      },
-      'enter your password': {
-        'en': 'enter your password',
-        'sq': 'vendos fjalëkalimin tënd'
-      },
-      'remember me': {
-        'en': 'remember me',
-        'sq': 'mbaj mend'
-      },
-      'forgot password?': {
-        'en': 'forgot password?',
-        'sq': 'harruat fjalëkalimin?'
-      },
-      'login now': {
-        'en': 'login now',
-        'sq': 'hyr tani'
-      },
-      "don't have an account": {
-        'en': "don't have an account",
-        'sq': 'nuk keni llogari'
-      },
-      'create one!': {
-        'en': 'create one!',
-        'sq': 'krijo një!'
-      }
-      
-
-    };
-
-    // Përcakto cilën tekst duhet të ndryshohet në bazë të gjuhës së zgjedhur
-    var elementsToTranslate = document.querySelectorAll('[data-translate]');
-
-    elementsToTranslate.forEach(function(element) {
-      var key = element.getAttribute('data-translate');
-      if (translations[key]) {
-        element.textContent = translations[key][language];
-      }
-    });
-  }
-</script>
 
 
 
-    <div class="contact-info">
-      <div id="close-contact-info" class="fas fa-times"></div>
+<div class="contact-info">
+  <div id="close-contact-info" class="fas fa-times" data-translate="close"></div>
 
-      <div class="info">
-        <i class="fas fa-user-tie"></i>
-        <h3>Vitantonio Danese</h3>
-        <p>CEO</p>
-      </div>
+  <div class="info">
+    <i class="fas fa-user-tie"></i>
+    <h3 >Vitantonio Danese</h3>
+    <p data-translate="CEO">CEO</p>
+  </div>
 
-      <div class="info">
-        <i class="fas fa-phone"></i>
-        <h3>phone number</h3>
-        <p>+383 (0) 43 88 11 75</p>
-      </div>
+  <div class="info">
+    <i class="fas fa-phone"></i>
+    <h3 data-translate="phone number">phone number</h3>
+    <p>+383 (0) 43 88 11 75</p>
+  </div>
 
-      <div class="info">
-        <i class="fas fa-envelope"></i>
-        <h3>email address</h3>
-        <p>antaura.k@gmail.com</p>
-      </div>
+  <div class="info">
+    <i class="fas fa-envelope"></i>
+    <h3 data-translate="email address">email address</h3>
+    <p>antaura.k@gmail.com</p>
+  </div>
 
-      <div class="info">
-        <i class="fas fa-map-marker-alt"></i>
-        <h3>office address</h3>
-        <p>Prishtinë, 10000</p>
-      </div>
+  <div class="info">
+    <i class="fas fa-map-marker-alt"></i>
+    <h3 data-translate="office address">office address</h3>
+    <p>Prishtinë, 10000</p>
+  </div>
 
-      <div class="share">
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fab fa-twitter"></a>
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="#" class="fab fa-linkedin"></a>
-      </div>
-    </div>
+  <div class="share">
+    <!-- Add translation attributes to social media icons if necessary -->
+    <a href="#" class="fab fa-facebook-f"></a>
+    <a href="#" class="fab fa-twitter"></a>
+    <a href="#" class="fab fa-instagram"></a>
+    <a href="#" class="fab fa-linkedin"></a>
+  </div>
+</div>
+
 
     <!-- header section ends -->
 
@@ -611,11 +538,11 @@
       <h1 class="heading">contact us</h1>
 
       <div class="row">
-        <iframe
-          class="map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15076.89592087332!2d72.8319697277345!3d19.14167056419224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63aceef0c69%3A0x2aa80cf2287dfa3b!2sJogeshwari%20West%2C%20Mumbai%2C%20Maharashtra%20400047!5e0!3m2!1sen!2sin!4v1641716772852!5m2!1sen!2sin"
-          allowfullscreen=""
-          loading="lazy"
+      <iframe
+            class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47032.520526757214!2d21.134885049130575!3d42.66291307304647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135373fc151ff005%3A0xa81b6eae52b0c7f3!2sPrishtina!5e0!3m2!1sen!2s!4v1647489028614!5m2!1sen!2s"
+            allowfullscreen=""
+            loading="lazy"
         ></iframe>
 
         <form action="">
@@ -680,7 +607,6 @@ include 'blog.php';
         <a class="btn" href="#about">about</a>
         <a class="btn" href="#services">services</a>
         <a class="btn" href="#projects">projects</a>
-        <a class="btn" href="#pricing">pricing</a>
         <a class="btn" href="#contact">contact</a>
         <a class="btn" href="#blogs">blogs</a>
       </div>
@@ -698,7 +624,7 @@ include 'blog.php';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
 
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-
+    <script src="js/translate.js" ></script>
     <!-- custom js file link  -->
     <script src="js/script.js"></script>
 
