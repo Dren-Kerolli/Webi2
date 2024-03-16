@@ -543,23 +543,41 @@
           loading="lazy"
         ></iframe>
 
-        <form action="">
-          <h3 data-translate="get in touch">get in touch</h3>
-          <input type="text" placeholder="name" class="box" data-translate="name" />
-          <input type="email" placeholder="email" class="box" data-translate="email" />
-          <input type="number" placeholder="phone" class="box" data-translate="phone" />
-          <textarea
-            name=""
-            placeholder="message"
-            class="box"
-            id=""
-            cols="30"
-            rows="10"
-            data-translate="message"
-          ></textarea>
-          <button type="submit" class="btn" data-translate="send message">send message</button>
+        <form id="contactForm" method="post">
+    <input type="text" name="name" placeholder="name" class="box" data-translate="name" required />
+    <input type="email" name="email" placeholder="email" class="box" data-translate="email" required />
+    <input type="tel" name="phone" placeholder="phone" class="box" data-translate="phone" />
+    <textarea name="message" placeholder="message" class="box" cols="30" rows="10" data-translate="message" required></textarea>
+    <button type="button" class="btn" onclick="submitForm()">send message</button>
+    <div id="response"></div>
+</form>
 
-        </form>
+<script>
+    function submitForm() {
+        var formData = new FormData(document.getElementById("contactForm"));
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    document.getElementById("response").innerHTML = xhr.responseText;
+                    clearForm();
+                } else {
+                    document.getElementById("response").innerHTML = "Error: " + xhr.status;
+                }
+            }
+        };
+        xhr.open("POST", "submit.php", true);
+        xhr.send(formData);
+    }
+
+    function clearForm() {
+        document.getElementById("contactForm").reset();
+    }
+</script>
+
+    
+
+    
       </div>
     </section>
 
