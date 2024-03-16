@@ -1,5 +1,4 @@
 function changeLanguage(language) {
-    // Lista e tekstesh në të dy gjuhët
     var translations = {
       'home': {
         'en': 'home',
@@ -23,7 +22,7 @@ function changeLanguage(language) {
       },
       'blogs': {
         'en': 'blogs',
-        'sq': 'blogu'
+        'sq': 'blogjet'
       },
       'login form': {
         'en': 'login form',
@@ -72,12 +71,25 @@ function changeLanguage(language) {
       'office address': {
         'en': 'office address',
         'sq': 'adresa e zyrës'
+      },
+      'years of experience': {
+        'en': 'years of experience',
+        'sq': 'vitet e përvojës'
+      },
+      'project completed': {
+        'en': 'project completed',
+        'sq': 'projekte të përfunduara'
+      },
+      'satisfied clients': {
+        'en': 'satisfied clients',
+        'sq': 'klientë të kënaqur'
+      },
+      'active workers': {
+        'en': 'active workers',
+        'sq': 'punëtorë aktivë'
       }
-      
-
     };
 
-    // Përcakto cilën tekst duhet të ndryshohet në bazë të gjuhës së zgjedhur
     var elementsToTranslate = document.querySelectorAll('[data-translate]');
 
     elementsToTranslate.forEach(function(element) {
@@ -86,4 +98,4 @@ function changeLanguage(language) {
         element.textContent = translations[key][language];
       }
     });
-  }
+}

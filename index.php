@@ -67,11 +67,12 @@
 
    <!-- Dropdown për zgjedhjen e gjuhës -->
    <div class="language-selector">
-    <select onchange="changeLanguage(this.value)">
-      <option value="en">English</option>
-      <option value="sq">Shqip</option>
-    </select>
-  </div>
+  <select onchange="changeLanguage(this.value)">
+    <option value="en">🇬🇧 English</option>
+    <option value="sq">🇦🇱 Shqip</option>
+  </select>
+</div>
+
 </header>
 
 
@@ -195,25 +196,26 @@
 
       <div class="box-container">
         <div class="box">
-          <h3>10+</h3>
-          <p>years of experience</p>
+          <h3 >10+</h3>
+          <p data-translate="years of experience">years of experience</p>
         </div>
 
         <div class="box">
-          <h3>1500+</h3>
-          <p>project completed</p>
+          <h3 >1500+</h3>
+          <p data-translate="project completed">project completed</p>
         </div>
 
         <div class="box">
           <h3>790+</h3>
-          <p>satiesfied clients</p>
+          <p data-translate="satisfied clients">satisfied clients</p>
         </div>
 
         <div class="box">
           <h3>450+</h3>
-          <p>active workers</p>
+          <p data-translate="active workers">active workers</p>
         </div>
       </div>
+
     </section>
 
     <!-- about section ends -->
