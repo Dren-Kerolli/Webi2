@@ -59,6 +59,8 @@
   <select onchange="changeLanguage(this.value)" style="font-size: 15px; padding: 10px;">
     <option value="en">🇬🇧 English</option>
     <option value="sq">🇦🇱 Shqip</option>
+    <option value="pt">🇵🇹 Português</option>
+    <option value="it">🇮🇹 Italiano</option>
   </select>
 </div>
 
@@ -353,7 +355,7 @@
           <div class="content">
             <div class="info">
             <h3 data-translate="hospital">Planifikim i Spitaleve</h3>
-            <p data-translate="constructiondesign">construction and design</p>
+               <p data-translate="constructiondesign">Construction and Design</p>
             </div>
             <i class="fas fa-plus"></i>
           </div>

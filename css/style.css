@@ -601,19 +601,18 @@ section {
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
 }
-
 .projects .box-container .box .content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background: var(--white);
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: block; /* Change from flex to block */
+  position: relative; /* Add position relative */
 }
 
 .projects .box-container .box .content .info {
-  padding: 1rem 2rem;
+  position: absolute; /* Add position absolute */
+  bottom: 0; /* Position at the bottom of the container */
+  left: 0; /* Position at the left of the container */
+  width: 100%; /* Take full width */
+  background: rgba(255, 255, 255, 0.8); /* Add background to make text readable */
+  padding: 1rem 2rem; /* Add padding for spacing */
 }
 
 .projects .box-container .box .content .info h3 {
@@ -627,6 +626,7 @@ section {
   color: var(--light-color);
   line-height: 2;
 }
+
 
 .projects .box-container .box .content i {
   width: 7.5rem;
