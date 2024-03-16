@@ -50,8 +50,9 @@
   <div class="icons">
     <div id="menu-btn" class="fas fa-bars" data-translate="menu"></div>
     <div id="info-btn" class="fas fa-info-circle" data-translate="info"></div>
-    <div id="search-btn" class="fas fa-search" data-translate="search"></div>
-    <div id="login-btn" class="fas fa-user d-none" data-translate="login"></div>
+        <div id="login-btn" class="fas fa-user " data-translate="login"></div>
+
+    <div id="search-btn" class="fas fa-search d-none" data-translate="search"></div>
   </div>
 
   <form action="" class="search-form">
