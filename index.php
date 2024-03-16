@@ -166,23 +166,29 @@
     <!-- about section starts  -->
 
     <section class="about" id="about">
-      <h1 class="heading">about us</h1>
+      <h1 data-translate="about" class="heading">about us</h1>
 
       <div class="row">
-        <div class="video">
-          <video src="images/about-vid.mp4" loop muted autoplay></video>
+          <div class="video">
+            <video src="images/about-vid.mp4" loop muted autoplay></video>
+          </div>
+
+          <div class="content">
+          <h4 data-translate="professionalismOffer">We offer our professionalism to all Italians who want to immigrate to Kosovo</h4>
+          <p data-translate="expertiseDescription">Our professional expertise can assist you in the following areas:</p>
+          <ul>
+            <li data-translate="buyProperty">Buy a house, apartment, villa, land, and more</li>
+            <li data-translate="construction">Construction of personalized houses and villas</li>
+            <li data-translate="licenseConversion">Convert your driving license</li>
+            <li data-translate="residenceRegistration">Register your residence</li>
+            <li data-translate="carTransfer">Transfer your car with plates to Kosovo</li>
+            <li data-translate="otherServices">And many other services...</li>
+          </ul>
+          <p data-translate="contactUs">Do not hesitate to contact us.</p>
+          
+          </div>
         </div>
 
-        <div class="content">
-          <h3>We will provide you the best work which you dreamt for!</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas et
-            vero mollitia nemo corporis consequatur aspernatur distinctio
-            dignissimos velit nam.
-          </p>
-          <a href="#services" class="btn">read more</a>
-        </div>
-      </div>
 
       <div class="box-container">
         <div class="box">
@@ -357,6 +363,28 @@
 
     <!-- projects section ends -->
    
+    <section class="logo-container">
+      <div class="swiper logo-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide" style="height:100px" >
+            <img src="images/photos/1.jpg" style="height:100px" alt="" />
+          </div>
+          <div class="swiper-slide slide"style="height:100px" >
+            <img src="images/photos/2.jpg" alt=""style="height:100px"  />
+          </div>
+          <div class="swiper-slide slide"style="height:100px" >
+            <img src="images/photos/3.jpg" alt="" style="height:100px" />
+          </div>
+          <div class="swiper-slide slide"style="height:100px" >
+            <img src="images/photos/4.jpg" alt="" style="height:100px" />
+          </div>
+          <div class="swiper-slide slide"style="height:100px" >
+            <img src="images/photos/5.png" alt="" style="height:100px" />
+          </div>
+         
+        </div>
+      </div>
+    </section>
     <!-- reviews section starts  -->
 
     <section class="reviews">

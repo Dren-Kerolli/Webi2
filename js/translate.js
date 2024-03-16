@@ -5,7 +5,7 @@ function changeLanguage(language) {
         'sq': 'ballina'
       },
       'about': {
-        'en': 'about',
+        'en': 'about us',
         'sq': 'rreth nesh'
       },
       'services': {
@@ -171,7 +171,79 @@ function changeLanguage(language) {
 'exportImportDescription': {
     'en': 'Facilitating global trade through expert export-import services. With a focus on efficiency and reliability, we connect markets, delivering value and opportunities across borders.',
     'sq': 'Lehtësimi i tregtisë globale përmes shërbimeve eksperte import-eksport. Me fokus në efikasitet dhe besueshmëri, ne lidhim tregjet, duke ofruar vlerë dhe mundësi nëpër kufij.'
-}
+},
+'professionalismOffer': {
+    'en': 'We offer our professionalism to all Italians who want to immigrate to Kosovo',
+    'sq': 'Ofruam profesionalizmin tonë të gjithë italianëve që dëshirojnë të emigrojnë në Kosovë'
+  },
+  'expertiseDescription': {
+    'en': 'Our professional expertise can assist you in the following areas:',
+    'sq': 'Ekspertiza jonë profesionale mund t\'ju ndihmojë në këto fusha:'
+  },
+  'buyProperty': {
+    'en': 'Buy a house, apartment, villa, land, and more',
+    'sq': 'Blej një shtëpi, apartament, vilë, tokë dhe më shumë'
+  },
+  'construction': {
+    'en': 'Construction of personalized houses and villas',
+    'sq': 'Ndërtimi i shtëpive dhe vilave të personalizuara'
+  },
+  'licenseConversion': {
+    'en': 'Convert your driving license',
+    'sq': 'Konvertoni patentën tuaj të drejtimit'
+  },
+  'residenceRegistration': {
+    'en': 'Register your residence',
+    'sq': 'Regjistroni vendbanimin tuaj'
+  },
+  'carTransfer': {
+    'en': 'Transfer your car with plates to Kosovo',
+    'sq': 'Transferoni veturën tuaj me targa në Kosovë'
+  },
+  'otherServices': {
+    'en': 'And many other services...',
+    'sq': 'Dhe shumë shërbime të tjera...'
+  },
+  'contactUs': {
+    'en': 'Do not hesitate to contact us.',
+    'sq': 'Mos hezitoni të na kontaktoni.'
+  },
+  'professionalismOffer': {
+    'en': 'We offer our professionalism to all Italians who want to immigrate to Kosovo',
+    'sq': 'Ofruam profesionalizmin tonë të gjithë italianëve që dëshirojnë të emigrojnë në Kosovë'
+  },
+  'expertiseDescription': {
+    'en': 'Our professional expertise can assist you in the following areas:',
+    'sq': 'Ekspertiza jonë profesionale mund t\'ju ndihmojë në këto fusha:'
+  },
+  'buyProperty': {
+    'en': 'Buy a house, apartment, villa, land, and more',
+    'sq': 'Blej një shtëpi, apartament, vilë, tokë dhe më shumë'
+  },
+  'construction': {
+    'en': 'Construction of personalized houses and villas',
+    'sq': 'Ndërtimi i shtëpive dhe vilave të personalizuara'
+  },
+  'licenseConversion': {
+    'en': 'Convert your driving license',
+    'sq': 'Konvertoni patentën tuaj të drejtimit'
+  },
+  'residenceRegistration': {
+    'en': 'Register your residence',
+    'sq': 'Regjistroni vendbanimin tuaj'
+  },
+  'carTransfer': {
+    'en': 'Transfer your car with plates to Kosovo',
+    'sq': 'Transferoni veturën tuaj me targa në Kosovë'
+  },
+  'otherServices': {
+    'en': 'And many other services...',
+    'sq': 'Dhe shumë shërbime të tjera...'
+  },
+  'contactUs': {
+    'en': 'Do not hesitate to contact us.',
+    'sq': 'Mos hezitoni të na kontaktoni.'
+  }
     };
 
     var elementsToTranslate = document.querySelectorAll('[data-translate]');
