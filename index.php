@@ -281,40 +281,40 @@
       <h1 class="heading">our projects</h1>
 
       <div class="box-container">
-        <a href="images/project-1.jpg" class="box">
+        <a href="images/photos/images.jpeg" class="box">
           <div class="image">
-            <img src="images/project-1.jpg" alt="" />
+            <img src="images/photos/images.jpeg" alt="" />
           </div>
           <div class="content">
             <div class="info">
-              <h3>dream home</h3>
-              <p>construction, design</p>
+              <h3 data-translate="pharmaceuticalFactories">Pharmaceutical Factories</h3>
+              <p data-translate="constructiondesign">construction and design</p>
             </div>
             <i class="fas fa-plus"></i>
           </div>
         </a>
 
-        <a href="images/project-2.jpg" class="box">
+        <a href="images/photos/plastic.jpeg" class="box">
           <div class="image">
-            <img src="images/project-2.jpg" alt="" />
+            <img src="images/photos/plastic.jpeg" alt="" />
           </div>
           <div class="content">
             <div class="info">
-              <h3>dream home</h3>
-              <p>construction, design</p>
+            <h3 data-translate="plasticProduction">Plastic Production</h3>
+            <p data-translate="constructiondesign">construction and design</p>
             </div>
             <i class="fas fa-plus"></i>
           </div>
         </a>
 
-        <a href="images/project-3.jpg" class="box">
+        <a href="images/photos/villa.jpeg" class="box">
           <div class="image">
-            <img src="images/project-3.jpg" alt="" />
+            <img src="images/photos/villa.jpeg" alt="" />
           </div>
           <div class="content">
             <div class="info">
-              <h3>dream home</h3>
-              <p>construction, design</p>
+            <h3 data-translate="ConstructionProjects">Construction Projects</h3>
+              <p data-translate="constructiondesign">construction and design</p>
             </div>
             <i class="fas fa-plus"></i>
           </div>
@@ -322,38 +322,38 @@
 
         <a href="images/project-4.jpg" class="box">
           <div class="image">
-            <img src="images/project-4.jpg" alt="" />
+            <img src="images/photos/stone.jpeg" alt="" />
           </div>
           <div class="content">
             <div class="info">
-              <h3>dream home</h3>
-              <p>construction, design</p>
+              <h3 data-translate="CarparoandLeccese">Carparo and Leccese</h3>
+              <p data-translate="constructiondesign">construction and design</p>
             </div>
             <i class="fas fa-plus"></i>
           </div>
         </a>
 
-        <a href="images/project-5.jpg" class="box">
+        <a href="images/photos/realestate.jpeg" class="box">
           <div class="image">
-            <img src="images/project-5.jpg" alt="" />
+            <img src="images/photos/realestate.jpeg" alt="" />
           </div>
           <div class="content">
             <div class="info">
-              <h3>dream home</h3>
-              <p>construction, design</p>
+            <h3 data-translate="EstateAgency">Real Estate Agency</h3>
+              <p data-translate="estate">Buy, sell, rent</p>
             </div>
             <i class="fas fa-plus"></i>
           </div>
         </a>
 
-        <a href="images/project-6.jpg" class="box">
+        <a href="images/photos/plane.jpeg" class="box">
           <div class="image">
-            <img src="images/project-6.jpg" alt="" />
+            <img src="images/photos/plane.jpeg" alt="" />
           </div>
           <div class="content">
             <div class="info">
-              <h3>dream home</h3>
-              <p>construction, design</p>
+            <h3 data-translate="hospital">Planifikim i Spitaleve</h3>
+            <p data-translate="constructiondesign">construction and design</p>
             </div>
             <i class="fas fa-plus"></i>
           </div>

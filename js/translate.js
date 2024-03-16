@@ -243,7 +243,31 @@ function changeLanguage(language) {
   'contactUs': {
     'en': 'Do not hesitate to contact us.',
     'sq': 'Mos hezitoni të na kontaktoni.'
-  }
+  },
+  'ConstructionProjects':{
+    'en': 'Construction Projects',
+    'sq': 'Projekte Të Ndërtimit'
+  },
+  'constructiondesign':{
+    'en': 'construction and design',
+    'sq': 'ndertim dhe dizajn '
+  },
+  'CarparoandLeccese':{
+    'en': 'Carparo and Leccese',
+    'sq': 'Carparo dhe Leccese'
+  },
+  'EstateAgency': {
+    'en': 'Real Estate Agency',
+    'sq': 'Agjencia e Patundshmerive'
+},
+'estate': {
+  'en': 'Buy, sell, rent',
+  'sq': 'Blej, Shit,Qera'
+},
+'hospital': {
+  'en': 'Hospital Planning',
+  'sq': 'Planifikim i Spitaleve'
+},
     };
 
     var elementsToTranslate = document.querySelectorAll('[data-translate]');
