@@ -603,19 +603,16 @@ include 'blog.php';
 
     <section class="footer">
       <div class="links">
-        <a class="btn" href="#home">home</a>
-        <a class="btn" href="#about">about</a>
-        <a class="btn" href="#services">services</a>
-        <a class="btn" href="#projects">projects</a>
-        <a class="btn" href="#contact">contact</a>
-        <a class="btn" href="#blogs">blogs</a>
+        <a class="btn" data-translate="home">home</a>
+        <a class="btn" data-translate="about" href="#about">about</a>
+        <a class="btn" data-translate="services" href="#services">services</a>
+        <a class="btn" data-translate="projects" href="#projects">projects</a>
+        <a class="btn" data-translate="contact" href="#contact">contact</a>
+        <a class="btn" data-translate="blogs" href="#blogs">blogs</a>
       </div>
 
-      <div class="credit" data-translate="created by">created by
-        <a href="https://devvikram-a5281.web.app/" target="_blank">
-          <span>Vikram Choudhary</span>
-        </a>
-        | all rights reserved!
+      <div class="credit" data-translate="created by">
+        ANTAURA | all rights reserved!
       </div>
     </section>
 

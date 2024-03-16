@@ -23,7 +23,7 @@ function changeLanguage(language) {
       },
       'blogs': {
         'en': 'blogs',
-        'sq': 'blogjet'
+        'sq': 'blogu'
       },
       'login form': {
         'en': 'login form',
