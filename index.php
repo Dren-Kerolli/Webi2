@@ -535,23 +535,22 @@
     <!-- reviews section ends -->
 
     <!-- contact section starts  -->
-
     <section class="contact" id="contact">
-      <h1 class="heading">contact us</h1>
+      <h1 class="heading" data-translate="contact us">contact us</h1>
 
       <div class="row">
-      <iframe
-            class="map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47032.520526757214!2d21.134885049130575!3d42.66291307304647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135373fc151ff005%3A0xa81b6eae52b0c7f3!2sPrishtina!5e0!3m2!1sen!2s!4v1647489028614!5m2!1sen!2s"
-            allowfullscreen=""
-            loading="lazy"
+        <iframe
+          class="map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47032.520526757214!2d21.134885049130575!3d42.66291307304647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135373fc151ff005%3A0xa81b6eae52b0c7f3!2sPrishtina!5e0!3m2!1sen!2s!4v1647489028614!5m2!1sen!2s"
+          allowfullscreen=""
+          loading="lazy"
         ></iframe>
 
         <form action="">
-          <h3>get in touch</h3>
-          <input type="text" placeholder="name" class="box" />
-          <input type="email" placeholder="email" class="box" />
-          <input type="number" placeholder="phone" class="box" />
+          <h3 data-translate="get in touch">get in touch</h3>
+          <input type="text" placeholder="name" class="box" data-translate="name" />
+          <input type="email" placeholder="email" class="box" data-translate="email" />
+          <input type="number" placeholder="phone" class="box" data-translate="phone" />
           <textarea
             name=""
             placeholder="message"
@@ -559,11 +558,14 @@
             id=""
             cols="30"
             rows="10"
+            data-translate="message"
           ></textarea>
-          <input type="submit" value="send message" class="btn" />
+          <button type="submit" class="btn" data-translate="send message">send message</button>
+
         </form>
       </div>
     </section>
+
 
 
 
