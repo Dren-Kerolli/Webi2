@@ -6,29 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./images/service-5.png" type="image/x-icon" />
     <title>Construction Website || Real Estate Companie</title>
-
+    <link rel="shortcut icon" type="image/png" href="images/post.png">
     <!-- font awesome cdn link  -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
-    />
-
-    <!-- custom css file link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js" integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- header section starts  -->
+   
 
 
 
@@ -68,11 +56,12 @@
 
    <!-- Dropdown për zgjedhjen e gjuhës -->
    <div class="language-selector">
-  <select onchange="changeLanguage(this.value)">
+  <select onchange="changeLanguage(this.value)" style="font-size: 15px; padding: 10px;">
     <option value="en">🇬🇧 English</option>
     <option value="sq">🇦🇱 Shqip</option>
   </select>
 </div>
+
 
 </header>
 
@@ -224,82 +213,59 @@
     <!-- services section starts  -->
 
     <section class="services" id="services">
-      <h1 class="heading">our services</h1>
+    <h1 class="heading" data-translate="services">our services</h1>
 
-      <div class="box-container">
+    <div class="box-container">
         <div class="box">
-          <img src="images/service-1.png" alt="" />
-          <h3>building construction</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
-            necessitatibus.
-          </p>
+            <img src="images/services/industry.png" alt="" />
+            <h3 data-translate="pharmaceuticalFactories">Pharmaceutical Factories</h3>
+            <p data-translate="pharmaceuticalFactoriesDescription">We represent the production of pharmaceutical factories, ensuring unparalleled quality and the highest standards in every product we distribute.</p>
         </div>
 
         <div class="box">
-          <img src="images/service-2.png" alt="" />
-          <h3>house renovation</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
-            necessitatibus.
-          </p>
+            <img src="images/services/sofa.png" alt="" />
+            <h3 data-translate="artOfFurnitureProduction">The Art of Furniture Production</h3>
+            <p data-translate="artOfFurnitureProductionDescription">We specialize in large-scale furniture production, working with meticulous care to deliver exceptional quality in every detail.</p>
         </div>
 
         <div class="box">
-          <img src="images/service-3.png" alt="" />
-          <h3>architechture design</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
-            necessitatibus.
-          </p>
+            <img src="images/services/project-management.png" alt="" />
+            <h3 data-translate="developmentOfConstructionProjects">Development of Construction Projects</h3>
+            <p data-translate="developmentOfConstructionProjectsDescription">Construction Projects Development: Achieving Vision with Creativity, High Quality, and Sustainable Progress in the Construction Industry.</p>
         </div>
 
         <div class="box">
-          <img src="images/service-4.png" alt="" />
-          <h3>material supply</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
-            necessitatibus.
-          </p>
+            <img src="images/services/eco-house.png" alt="" />
+            <h3 data-translate="expertElectricalInstallations">Expert Electrical Installations</h3>
+            <p data-translate="expertElectricalInstallationsDescription">Expert electrical installations for homes, businesses, and industries. Quality, precision, and safety guaranteed.</p>
         </div>
 
         <div class="box">
-          <img src="images/service-5.png" alt="" />
-          <h3>construction consultant</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
-            necessitatibus.
-          </p>
+            <img src="images/services/real-estate.png" alt="" />
+            <h3 data-translate="realEstateAgency">Real Estate Agency</h3>
+            <p data-translate="realEstateAgencyDescription">We're a real estate agency offering personalized services with high quality for property sales, purchases, rentals, and management.</p>
         </div>
 
         <div class="box">
-          <img src="images/service-6.png" alt="" />
-          <h3>interior design</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
-            necessitatibus.
-          </p>
+            <img src="images/services/travel.png" alt="" />
+            <h3 data-translate="travelAgency">Travel Agency</h3>
+            <p data-translate="travelAgencyDescription">Discover the world with ease through our travel agency. We specialize in crafting unforgettable journeys tailored to your preferences.</p>
         </div>
 
         <div class="box">
-          <img src="images/service-7.png" alt="" />
-          <h3>building maintenance</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
-            necessitatibus.
-          </p>
+            <img src="images/services/3d-printer.png" alt="" />
+            <h3 data-translate="plasticProduction">Plastic Production</h3>
+            <p data-translate="plasticProductionDescription">From packaging to industrial applications, we deliver high-quality plastic products that redefine standards and promote environmental responsibility.</p>
         </div>
 
         <div class="box">
-          <img src="images/service-8.png" alt="" />
-          <h3>building renovation</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
-            necessitatibus.
-          </p>
+            <img src="images/services/export.png" alt="" />
+            <h3 data-translate="exportImport">Export Import</h3>
+            <p data-translate="exportImportDescription">Facilitating global trade through expert export-import services. With a focus on efficiency and reliability, we connect markets, delivering value and opportunities across borders.</p>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- services section ends -->
 
@@ -390,7 +356,7 @@
     </section>
 
     <!-- projects section ends -->
-
+   
     <!-- reviews section starts  -->
 
     <section class="reviews">
@@ -406,7 +372,7 @@
               rem aperiam vel modi?
             </p>
             <div class="user">
-              <img src="images/pic-1.png" alt="" />
+              <img src="images/photos/2.jpg" alt="" />
               <div class="info">
                 <h3>john deo</h3>
                 <div class="stars">
@@ -627,6 +593,9 @@ include 'blog.php';
 
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="js/translate.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js" integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.js" integrity="sha512-tCkLWlSXiiMsUaDl5+8bqwpGXXh0zZsgzX6pB9IQCZH+8iwXRYfcCpdxl/owoM6U4ap7QZDW4kw7djQUiQ4G2A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <!-- custom js file link  -->
     <script src="js/script.js"></script>
 
