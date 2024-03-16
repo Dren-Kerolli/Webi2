@@ -355,7 +355,7 @@
           <div class="content">
             <div class="info">
             <h3 data-translate="hospital">Planifikim i Spitaleve</h3>
-               <p data-translate="constructiondesign">Construction and Design</p>
+              <p>construction and design</p>
             </div>
             <i class="fas fa-plus"></i>
           </div>
