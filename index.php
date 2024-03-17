@@ -32,15 +32,15 @@
     <a href="#projects" data-translate="projects">projects</a>
 
     <a href="#contact" data-translate="contact">contact</a>
-    <a href="#blogs" data-translate="blogs">blogs</a>
+    <a href="blog.php" data-translate="blogs">blogs</a>
   </nav>
- 
   <div class="icons">
     <div id="menu-btn" class="fas fa-bars" data-translate="menu"></div>
     <div id="info-btn" class="fas fa-info-circle" data-translate="info"></div>
         <div id="login-btn" class="fas fa-user " data-translate="login"></div>
+    <div id="search-btn" class="fas fa-search d-none" data-translate="search">
 
-    <div id="search-btn" class="fas fa-search d-none" data-translate="search"></div>
+    </div>
   </div>
 
   <form action="" class="search-form">
@@ -584,10 +584,6 @@
 
 
 
-    <?php
-include 'blog.php';
-
-?>
 
     <!-- client logo section starts -->
 

@@ -8,6 +8,7 @@
         /* CSS për të vendosur butonat në qendër */
         body {
             text-align: center; /* Qendro tekstin në qendër të faqes */
+            font-family: Arial, sans-serif; /* Përdor fontin Arial për të bërë tekstin më të lehtë për lexim */
         }
 
         /* Përdorimi i media queries për të bërë faqen responsive */
@@ -31,13 +32,6 @@
             position: relative; /* Shto pozicionin relative për të vendosur dropdown */
         }
 
-        .swiper-slide .language-selector {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 999; /* Vendos z-index për të qenë mbi imazhin */
-        }
-
         .swiper-slide .card {
             position: relative; /* Përdorim pozicionin relative */
             width: 800px; /* Përshkruaj madhësinë e kartës */
@@ -46,6 +40,7 @@
             border-radius: 10px;
             margin: 20px;
             background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shto hijen e butonit për efekt më të mirë vizual */
         }
 
         .swiper-slide img {
@@ -66,103 +61,132 @@
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.5); /* Fono transparent për tekstin */
             color: white;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
         }
 
-        .btn {
-            display: inline-block;
+        .change-language-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
             background-color: #4CAF50;
             color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 5px;
+            cursor: pointer;
             transition: background-color 0.3s;
         }
 
-        .btn:hover {
+        .change-language-btn:hover {
             background-color: #45a049;
         }
     </style>
 </head>
 <body>
+<header class="header">
+  <a href="index.php" class="logo"><img src="images/post.png" class="img-fluid" style="width:120px;height:auto" alt=""></span></a>
 
-    <!-- Sektori për të shfaqur postimet e blogut -->
-    <div class="swiper home-slider">
-        <div class="swiper-wrapper">
-            <?php
-            // Lidhja me bazën e të dhënave
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "construction_db";
 
-            $conn = new mysqli($servername, $username, $password, $dbname);
 
-            if ($conn->connect_error) {
-                die("Lidhja dështoi: " . $conn->connect_error);
-            }
+  <nav class="navbar">
+    <a href="#home" data-translate="home">home</a>
+    <a href="#about" data-translate="about">about</a>
+    <a href="#services" data-translate="services">services</a>
+    <a href="#projects" data-translate="projects">projects</a>
 
-            // Gjuha e zgjedhur
-            $selected_language = isset($_GET['lang']) ? $_GET['lang'] : 'en';
+    <a href="#contact" data-translate="contact">contact</a>
+    <a href="blog.php" data-translate="blogs">blogs</a>
+  </nav>
+  <div class="icons">
+    <div id="menu-btn" class="fas fa-bars" data-translate="menu"></div>
+    <div id="info-btn" class="fas fa-info-circle" data-translate="info"></div>
+        <div id="login-btn" class="fas fa-user " data-translate="login"></div>
+    <div id="search-btn" class="fas fa-search d-none" data-translate="search">
 
-            // Kërkesa SQL për të marrë postimet e blogut
-            $sql = "SELECT title_$selected_language AS title, content_$selected_language AS content, foto FROM blog_posts";
-            $result = $conn->query($sql);
-
-            // Kontrolli nëse ka rezultate
-            if ($result->num_rows > 0) {
-                // Shfaqja e postimeve të blogut
-                while($row = $result->fetch_assoc()) {
-                    echo '<div class="swiper-slide slide">';
-                    echo '<div class="language-selector">';
-                    echo '<form>';
-                    echo '<label for="language">Zgjidh Gjuhën:</label>';
-                    echo '<select id="language" name="lang">';
-                    echo '<option value="en">English</option>';
-                    echo '<option value="it">Italiano</option>';
-                    echo '<option value="es">Español</option>';
-                    echo '<option value="sq">Shqip</option>'; // Shtuar opsioni për gjuhën shqipe
-                    echo '</select>';
-                    echo '</form>';
-                    echo '</div>';
-                    echo '<div class="card">';
-                    echo '<img src="data:image/jpeg;base64,'.base64_encode($row['foto']).'" alt="' . $row["title"] . '">';
-                    echo '<div class="card-content">';
-                    echo '<h3>' . $row["title"] . '</h3>';
-                    echo '<p>' . $row["content"] . '</p>';
-                    echo '</div>';
-                    echo '</div>';
-                    echo '</div>';
-                }
-            } else {
-                echo "<p>No blog posts available.</p>";
-            }
-
-            // Mbyll lidhjen me bazën e të dhënave
-            $conn->close();
-            ?>
-        </div>
-        <div class="swiper-button-next" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%);"></div>
-        <div class="swiper-button-prev" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%);"></div>
     </div>
+  </div>
 
-    <!-- Include the Swiper JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <form action="" class="search-form">
+    <input
+      type="search"
+      name=""
+      placeholder="search here..."
+      id="search-box"
+      data-translate="search_placeholder"
+    />
+    <label for="search-box" class="fas fa-search"></label>
+  </form>
 
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper('.home-slider', {
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
+   <!-- Dropdown për zgjedhjen e gjuhës -->
+   <div class="language-selector">
+  <select onchange="changeLanguage(this.value)" style="font-size: 15px; padding: 10px;">
+    <option value="en">🇬🇧 English</option>
+    <option value="sq">🇦🇱 Shqip</option>
+    <option value="pt">🇵🇹 Português</option>
+    <option value="it">🇮🇹 Italiano</option>
+  </select>
+</div>
+
+
+</header>
+<!-- Dropdown për zgjedhjen e gjuhës -->
+<select id="languageSelector" onchange="changeLanguage(this.value)">
+    <option value="en">English</option>
+    <option value="sq">Shqip</option>
+    <option value="pt">Português</option>
+    <option value="it">Italiano</option>
+</select>
+
+<!-- Sektori për të shfaqur postimet e blogut -->
+<div class="swiper home-slider">
+    <div class="swiper-wrapper" id="blog-posts">
+        <!-- Përmbajtja e postimeve të blogut do të injektohet këtu nga JavaScript -->
+        <?php include 'fetch_blog_posts.php'; ?>
+    </div>
+    <div class="swiper-button-next" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%);"></div>
+    <div class="swiper-button-prev" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%);"></div>
+</div>
+
+<!-- Include the Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+
+
+<script>
+    var swiper = new Swiper('.home-slider', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+    function changeLanguage(language) {
+        var translations = {
+            // Përkthimet këtu
+        };
+
+        // Përditëson tekstin e elementeve që kanë atributin për perkthim
+        var elementsToTranslate = document.querySelectorAll('[data-translate]');
+        elementsToTranslate.forEach(function(element) {
+            var key = element.getAttribute('data-translate');
+            if (translations[key]) {
+                element.textContent = translations[key][language];
+                // Për vendosjen e tekstit në input dhe vlerën e butonit, duhet ta trajtojmë ndryshe
+                if (element.tagName === 'INPUT' && (element.type === 'text' || element.type === 'email' || element.type === 'number')) {
+                    element.setAttribute('placeholder', translations[key][language]);
+                } else if (element.tagName === 'TEXTAREA') {
+                    element.setAttribute('placeholder', translations[key][language]);
+                } else if (element.tagName === 'INPUT' && element.type === 'submit') {
+                    element.setAttribute('value', translations[key][language]);
+                }
+            }
         });
 
-        // Shto dëgjues për ndryshimin e dropdown
-        document.getElementById('language').addEventListener('change', function() {
-            var selectedLanguage = this.value;
-            window.location.href = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>?lang=" + selectedLanguage;
+        // Përditëson gjuhën e postimeve të blogut
+        var blogPostElements = document.querySelectorAll('.blog-post');
+        blogPostElements.forEach(function(post) {
+            post.setAttribute('lang', language);
         });
-    </script>
+    }
+</script>
 </body>
 </html>
