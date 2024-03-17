@@ -94,7 +94,7 @@
             $servername = "localhost";
             $username = "root";
             $password = "";
-            $dbname = "construction_db";
+            $dbname = "blog_posts";
 
             $conn = new mysqli($servername, $username, $password, $dbname);
 
