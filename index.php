@@ -16,7 +16,16 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-   
+  <div id="google_translate_element"></div>
+    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script> 
+    function googleTranslateElementInit(){
+     new google.translate.TranslateElement(
+        {pageLanguage:'en'},
+        'google_translate_element'
+     );
+    }
+        </script>
 
 
 
@@ -32,7 +41,7 @@
     <a href="#projects" data-translate="projects">projects</a>
 
     <a href="#contact" data-translate="contact">contact</a>
-    <a href="#blogs" data-translate="blogs">blogs</a>
+    <a href="blog.php" data-translate="blogs">blogs</a>
   </nav>
  
   <div class="icons">
