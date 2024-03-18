@@ -16,7 +16,16 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-   
+  <div id="google_translate_element"></div>
+    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script> 
+    function googleTranslateElementInit(){
+     new google.translate.TranslateElement(
+        {pageLanguage:'en'},
+        'google_translate_element'
+     );
+    }
+        </script>
 
 
 

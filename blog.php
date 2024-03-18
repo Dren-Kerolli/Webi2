@@ -81,59 +81,6 @@
     </style>
 </head>
 <body>
-<header class="header">
-  <a href="index.php" class="logo"><img src="images/post.png" class="img-fluid" style="width:120px;height:auto" alt=""></span></a>
-
-
-
-  <nav class="navbar">
-    <a href="#home" data-translate="home">home</a>
-    <a href="#about" data-translate="about">about</a>
-    <a href="#services" data-translate="services">services</a>
-    <a href="#projects" data-translate="projects">projects</a>
-
-    <a href="#contact" data-translate="contact">contact</a>
-    <a href="blog.php" data-translate="blogs">blogs</a>
-  </nav>
-  <div class="icons">
-    <div id="menu-btn" class="fas fa-bars" data-translate="menu"></div>
-    <div id="info-btn" class="fas fa-info-circle" data-translate="info"></div>
-        <div id="login-btn" class="fas fa-user " data-translate="login"></div>
-    <div id="search-btn" class="fas fa-search d-none" data-translate="search">
-
-    </div>
-  </div>
-
-  <form action="" class="search-form">
-    <input
-      type="search"
-      name=""
-      placeholder="search here..."
-      id="search-box"
-      data-translate="search_placeholder"
-    />
-    <label for="search-box" class="fas fa-search"></label>
-  </form>
-
-   <!-- Dropdown për zgjedhjen e gjuhës -->
-   <div class="language-selector">
-  <select onchange="changeLanguage(this.value)" style="font-size: 15px; padding: 10px;">
-    <option value="en">🇬🇧 English</option>
-    <option value="sq">🇦🇱 Shqip</option>
-    <option value="pt">🇵🇹 Português</option>
-    <option value="it">🇮🇹 Italiano</option>
-  </select>
-</div>
-
-
-</header>
-<!-- Dropdown për zgjedhjen e gjuhës -->
-<select id="languageSelector" onchange="changeLanguage(this.value)">
-    <option value="en">English</option>
-    <option value="sq">Shqip</option>
-    <option value="pt">Português</option>
-    <option value="it">Italiano</option>
-</select>
 
 <!-- Sektori për të shfaqur postimet e blogut -->
 <div class="swiper home-slider">
@@ -149,8 +96,6 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <!-- Initialize Swiper -->
-
-
 <script>
     var swiper = new Swiper('.home-slider', {
         navigation: {
@@ -160,33 +105,35 @@
     });
 
     function changeLanguage(language) {
-        var translations = {
-            // Përkthimet këtu
-        };
+    var translations = {
+        // Përkthimet këtu
+    };
 
-        // Përditëson tekstin e elementeve që kanë atributin për perkthim
-        var elementsToTranslate = document.querySelectorAll('[data-translate]');
-        elementsToTranslate.forEach(function(element) {
-            var key = element.getAttribute('data-translate');
-            if (translations[key]) {
-                element.textContent = translations[key][language];
-                // Për vendosjen e tekstit në input dhe vlerën e butonit, duhet ta trajtojmë ndryshe
-                if (element.tagName === 'INPUT' && (element.type === 'text' || element.type === 'email' || element.type === 'number')) {
-                    element.setAttribute('placeholder', translations[key][language]);
-                } else if (element.tagName === 'TEXTAREA') {
-                    element.setAttribute('placeholder', translations[key][language]);
-                } else if (element.tagName === 'INPUT' && element.type === 'submit') {
-                    element.setAttribute('value', translations[key][language]);
-                }
+    // Përditëson tekstin e elementeve që kanë atributin për perkthim
+    var elementsToTranslate = document.querySelectorAll('[data-translate]');
+    elementsToTranslate.forEach(function(element) {
+        var key = element.getAttribute('data-translate');
+        if (translations[key]) {
+            element.textContent = translations[key][language];
+            // Për vendosjen e tekstit në input dhe vlerën e butonit, duhet ta trajtojmë ndryshe
+            if (element.tagName === 'INPUT' && (element.type === 'text' || element.type === 'email' || element.type === 'number')) {
+                element.setAttribute('placeholder', translations[key][language]);
+            } else if (element.tagName === 'TEXTAREA') {
+                element.setAttribute('placeholder', translations[key][language]);
+            } else if (element.tagName === 'INPUT' && element.type === 'submit') {
+                element.setAttribute('value', translations[key][language]);
             }
-        });
+        }
+    });
 
-        // Përditëson gjuhën e postimeve të blogut
-        var blogPostElements = document.querySelectorAll('.blog-post');
-        blogPostElements.forEach(function(post) {
-            post.setAttribute('lang', language);
-        });
-    }
+    // Përditëson gjuhën e postimeve të blogut
+    var blogPostElements = document.querySelectorAll('.blog-post');
+    blogPostElements.forEach(function(post) {
+        post.setAttribute('lang', language);
+    });
+}
+
+
 </script>
 </body>
 </html>
