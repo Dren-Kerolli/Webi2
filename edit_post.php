@@ -59,13 +59,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($conn)) {
 // Merrni të gjithë postimet nga baza e të dhënave për të mbushur dropdown-in
 $posts = array();
 if (isset($conn)) {
-    $sql = "SELECT id, title_sq FROM blog_posts";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            $posts[$row["id"]] = $row["title_sq"];
-        }
-    }
+    // Retrieve both title and content from the database
+            $sql = "SELECT id, title_sq, content_sq FROM blog_posts";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    // Store both title and content in the posts array
+                    $posts[$row["id"]] = array(
+                        'title' => $row["title_sq"],
+                        'content' => $row["content_sq"]
+                    );
+                }
+            }
+
 } else {
     $message .= " Gabim: Nuk mund të merrni postimet nga baza e të dhënave.";
 }
@@ -191,35 +197,59 @@ if (isset($conn)) {
     <div class="content">
         <h2>Edit Post</h2>
         <div class="container">
-            <form action="edit_post.php" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="post_id">Post</label>
-                    <select id="post_id" name="post_id" class="form-control" required>
-                        <option value="">Select a Post</option>
-                        <?php foreach ($posts as $post_id => $post_title) { ?>
-                            <option value="<?php echo $post_id; ?>"><?php echo $post_title; ?></option>
-                        <?php } ?>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="post_title">Post Title:</label>
-                    <input type="text" class="form-control" id="post_title" name="post_title" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="post_content">Post Content:</label>
-                    <textarea class="form-control" id="post_content" name="post_content" rows="4" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="post_image">Post Image:</label>
-                    <input type="file" class="form-control-file" id="post_image" name="post_image" accept="image/*" required>
-                </div>
-
-                <button type="submit" class="btn-primary">Save Changes</button>
-            </form>
+    <form action="edit_post.php" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="post_id">Post</label>
+            <select id="post_id" name="post_id" class="form-control" required>
+    <option value="">Select a Post</option>
+    <?php foreach ($posts as $post_id => $post) { ?>
+        <option value="<?php echo $post_id; ?>"><?php echo $post['title']; ?></option>
+    <?php } ?>
+</select>
         </div>
+
+        <!-- Add hidden input fields for original title and content -->
+        <input type="hidden" id="original_title" name="original_title">
+        <input type="hidden" id="original_content" name="original_content">
+
+        <div class="form-group">
+            <label for="post_title">Post Title:</label>
+            <input type="text" class="form-control" id="post_title" name="post_title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="post_content">Post Content:</label>
+            <textarea class="form-control" id="post_content" name="post_content" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="post_image">Post Image:</label>
+            <input type="file" class="form-control-file" id="post_image" name="post_image" accept="image/*" required>
+        </div>
+
+        <button type="submit" class="btn-primary">Save Changes</button>
+    </form>
+</div>
+
+                <script>
+    document.getElementById('post_id').addEventListener('change', function() {
+        var selectedPostId = this.value;
+        var posts = <?php echo json_encode($posts); ?>;
+        var selectedPost = posts[selectedPostId];
+        
+        // Set the original title and content
+        document.getElementById('original_title').value = selectedPost.title;
+        document.getElementById('original_content').value = selectedPost.content;
+        
+        // Populate the input fields with the selected post's title and content
+        document.getElementById('post_title').value = selectedPost.title;
+        document.getElementById('post_content').value = selectedPost.content;
+    });
+</script>
+
+                
+         
+  
     </div>
     <div class="response text-center"><?php echo $message; ?></div>
 </body>

@@ -1,0 +1,116 @@
+body {
+    text-align: center; /* Qendro tekstin në qendër të faqes */
+    font-family: Arial, sans-serif; /* Përdor fontin Arial për të bërë tekstin më të lehtë për lexim */
+}
+
+/* Përdorimi i media queries për të bërë faqen responsive */
+@media only screen and (max-width: 768px) {
+    .swiper-slide .card {
+        width: 100%; /* Përshtat madhësinë e kartës për dimensione të vogla ekrani */
+        height: auto; /* Përshtat lartësinë e kartës për dimensione të vogla ekrani */
+        margin: 10px 0; /* Rregullo distancën midis kartave */
+    }
+
+    .swiper-slide img {
+        border-radius: 0; /* Hiq rrethimet për dimensione të vogla ekrani */
+    }
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Lejo kartat të shkojnë në rreshta të rinj nëse faqja është mjaft e ngushtë */
+    position: relative; /* Shto pozicionin relative për të vendosur dropdown */
+}
+
+.swiper-slide .card {
+    position: relative; /* Përdorim pozicionin relative */
+    width: 800px; /* Përshkruaj madhësinë e kartës */
+    height: 400px; /* Përshkruaj madhësinë e kartës */
+    overflow: hidden; /* Mbulo kartën me foto */
+    border-radius: 10px;
+    margin: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shto hijen e butonit për efekt më të mirë vizual */
+}
+
+.swiper-slide img {
+    position: absolute; /* Përdorim pozicionin absolute */
+    top: 0;
+    left: 0;
+    width: 100%; /* Mbulo plotësisht hapësirën e kartës */
+    height: 100%; /* Mbulo plotësisht hapësirën e kartës */
+    object-fit: cover; /* Rregullo raportin e përshtatjes së imazhit */
+    border-radius: 10px;
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fono transparent për tekstin */
+    color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.change-language-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+}
+
+.change-language-btn:hover {
+    background-color: #45a049;
+}
+
+.header {
+display: none;
+}
+
+.preloaderBg {
+position: fixed;
+z-index: 10;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+background: #fff;
+}
+
+.preloader {
+position: absolute; /* Position the logo relative to its parent */
+top: 50%; /* Move the logo 50% from the top of its parent */
+left: 50%; /* Move the logo 50% from the left of its parent */
+transform: translate(-50%, -50%); /* Center the logo */
+background: url(images/post.png) no-repeat center;
+background-size: 150px;
+width: 150px; /* Adjusted width to fit inside the circle */
+height: 150px; /* Adjusted height to fit inside the circle */
+}
+
+.preloader2 {
+border: 5px solid #f3f3f3;
+border-top: 5px solid #f00;
+border-radius: 50%;
+width: 250px;
+height: 250px;
+animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+

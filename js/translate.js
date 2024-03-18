@@ -364,19 +364,5 @@ var elementsToTranslate = document.querySelectorAll('[data-translate]');
 
     elementsToTranslate.forEach(function(element) {
         var key = element.getAttribute('data-translate');
-        if (translations[key]) {
-            element.textContent = translations[key][language];
-            // For input placeholders and button text, we handle them differently
-            if (element.tagName === 'INPUT' && element.type === 'text') {
-                element.setAttribute('placeholder', translations[key][language]);
-            } else if (element.tagName === 'INPUT' && element.type === 'email') {
-                element.setAttribute('placeholder', translations[key][language]);
-            } else if (element.tagName === 'INPUT' && element.type === 'number') {
-                element.setAttribute('placeholder', translations[key][language]);
-            } else if (element.tagName === 'TEXTAREA') {
-                element.setAttribute('placeholder', translations[key][language]);
-            } else if (element.tagName === 'INPUT' && element.type === 'submit') {
-                element.setAttribute('value', translations[key][language]);
-            }
-        }
+        
     });

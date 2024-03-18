@@ -165,8 +165,7 @@
      );
     }
         </script>
-
-<header class="header">
+ <header class="header">
     <a href="index.php" class="logo"><img src="images/post.png" class="img-fluid" style="width:120px;height:auto" alt=""></a>
 
 
@@ -209,7 +208,7 @@
   </form>
 
    <!-- Dropdown për zgjedhjen e gjuhës -->
-  
+ 
 
 
 </header>
@@ -286,7 +285,7 @@ $conn->close();
         // Vendos gjuhën në dropdown sipas gjuhës që është zgjedhur nga përdoruesi
         document.addEventListener("DOMContentLoaded", function() {
             var selectedLanguage = "<?php echo $selected_language; ?>";
-            document.getElementById('language_select').value = selectedLanguage;
+           // document.getElementById('language_select').value = selectedLanguage;
         });
     </script>
     <br><br>
