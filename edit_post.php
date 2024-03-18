@@ -20,7 +20,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($conn)) {
         $post_id = $_POST['post_id'];
         $title = $_POST['post_title'];
         $content = $_POST['post_content'];
-        $foto = file_get_contents($_FILES['post_image']['tmp_name']);
+        
+        // Kontrolloni nëse ka një imazh të ndryshuar në kërkesën POST
+        if ($_FILES['post_image']['size'] > 0) {
+            // Nëse ka një imazh të ndryshuar, përdorni atë imazh në vend të versionit origjinal të imazhit
+            $foto = file_get_contents($_FILES['post_image']['tmp_name']);
+        } else {
+            // Nëse nuk ka një imazh të ndryshuar, mbani versionin origjinal të imazhit
+            $sql_select_image = "SELECT foto FROM blog_posts WHERE id=?";
+            $stmt_select_image = $conn->prepare($sql_select_image);
+            $stmt_select_image->bind_param("i", $post_id);
+            $stmt_select_image->execute();
+            $stmt_select_image->store_result();
+            $stmt_select_image->bind_result($current_image);
+            $stmt_select_image->fetch();
+            
+            // Nëse nuk ka një imazh të ruajtur, përdorim një vlerë null për të mbajtur imazhin aktual
+            $foto = $current_image ?? null;
+            
+            $stmt_select_image->close();
+        }
 
         // Përkthe tekstet në gjuhët e zgjedhura (anglisht, italisht, spanjisht)
         $translator = new Stichoza\GoogleTranslate\GoogleTranslate();
@@ -53,7 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($conn)) {
     } else {
         $message = "Gabim: Ju lutemi plotësoni të gjitha fushat!";
     }
-} else {
 }
 
 // Merrni të gjithë postimet nga baza e të dhënave për të mbushur dropdown-in
@@ -179,7 +197,17 @@ if (isset($conn)) {
 .response {
     margin-top: 20px;
     font-weight: bold;
+}/* Stili për imazhin aktual */
+#current_image {
+    max-width: 100%; /* Bëni që imazhi të përshtatet me gjerësinë e prindit */
+    height: auto; /* Ruajeni raportin e dimensioneve */
+    display: block; /* Ndajeni imazhin në një rresht të ri */
+    border: 2px solid #ddd; /* Shtoni një kufi të hollë përreth imazhit */
+    border-radius: 5px; /* Bëni kufirin e imazhit të rrumbullakosur */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+     /* Shtoni një efekt hije për stilin e imazhit */
 }
+
     
     </style>
 </head>
@@ -187,7 +215,7 @@ if (isset($conn)) {
     <div class="sidebar">
         <h2>Admin Panel</h2>
         <ul>
-        <li><a href="shto_postim.php">Add Post</a></li>
+            <li><a href="shto_postim.php">Add Post</a></li>
             <li><a href="edit_post.php">Edit Post</a></li>
             <li><a href="delete_postime.php">Delete Post</a></li>
             <li><a href="#">Settings</a></li>
@@ -197,60 +225,78 @@ if (isset($conn)) {
     <div class="content">
         <h2>Edit Post</h2>
         <div class="container">
-    <form action="edit_post.php" method="POST" enctype="multipart/form-data">
-        <div class="form-group">
-            <label for="post_id">Post</label>
-            <select id="post_id" name="post_id" class="form-control" required>
-    <option value="">Select a Post</option>
-    <?php foreach ($posts as $post_id => $post) { ?>
-        <option value="<?php echo $post_id; ?>"><?php echo $post['title']; ?></option>
-    <?php } ?>
-</select>
+            <form action="edit_post.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="post_id">Post</label>
+                    <select id="post_id" name="post_id" class="form-control" required>
+                        <option value="">Select a Post</option>
+                        <?php foreach ($posts as $post_id => $post) { ?>
+                            <option value="<?php echo $post_id; ?>"><?php echo $post['title']; ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+
+                <!-- Add hidden input fields for original title and content -->
+                <input type="hidden" id="original_title" name="original_title">
+                <input type="hidden" id="original_content" name="original_content">
+
+                <!-- Shtoni këtë element për të shfaqur fotografinë aktuale -->
+             
+
+                <div class="form-group">
+                    <label for="post_title">Post Title:</label>
+                    <input type="text" class="form-control" id="post_title" name="post_title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="post_content">Post Content:</label>
+                    <textarea class="form-control" id="post_content" name="post_content" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="current_image">Current Image:</label><br>
+                    <img id="current_image" src="" alt="Current Image" style="max-width: 300px;">
+                </div>
+
+                <div class="form-group">
+                    <label for="post_image">Post Image:</label>
+                    <input type="file" class="form-control-file" id="post_image" name="post_image" accept="image/*" >
+                </div>
+
+                <button type="submit" class="btn-primary">Save Changes</button>
+            </form>
         </div>
-
-        <!-- Add hidden input fields for original title and content -->
-        <input type="hidden" id="original_title" name="original_title">
-        <input type="hidden" id="original_content" name="original_content">
-
-        <div class="form-group">
-            <label for="post_title">Post Title:</label>
-            <input type="text" class="form-control" id="post_title" name="post_title" required>
-        </div>
-
-        <div class="form-group">
-            <label for="post_content">Post Content:</label>
-            <textarea class="form-control" id="post_content" name="post_content" rows="4" required></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="post_image">Post Image:</label>
-            <input type="file" class="form-control-file" id="post_image" name="post_image" accept="image/*" required>
-        </div>
-
-        <button type="submit" class="btn-primary">Save Changes</button>
-    </form>
-</div>
-
-                <script>
-    document.getElementById('post_id').addEventListener('change', function() {
-        var selectedPostId = this.value;
-        var posts = <?php echo json_encode($posts); ?>;
-        var selectedPost = posts[selectedPostId];
-        
-        // Set the original title and content
-        document.getElementById('original_title').value = selectedPost.title;
-        document.getElementById('original_content').value = selectedPost.content;
-        
-        // Populate the input fields with the selected post's title and content
-        document.getElementById('post_title').value = selectedPost.title;
-        document.getElementById('post_content').value = selectedPost.content;
-    });
-</script>
-
-                
-         
-  
     </div>
+
     <div class="response text-center"><?php echo $message; ?></div>
+
+    <script>
+        document.getElementById('post_id').addEventListener('change', function() {
+            var selectedPostId = this.value;
+            var posts = <?php echo json_encode($posts); ?>;
+            var selectedPost = posts[selectedPostId];
+            
+            // Set the original title and content
+            document.getElementById('original_title').value = selectedPost.title;
+            document.getElementById('original_content').value = selectedPost.content;
+            
+            // Populate the input fields with the selected post's title and content
+            document.getElementById('post_title').value = selectedPost.title;
+            document.getElementById('post_content').value = selectedPost.content;
+            
+            // Populate the current image
+            document.getElementById('current_image').src = ''; // Clear previous image
+            // Perform an AJAX request to fetch the image URL from the server
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var imageURL = xhr.responseText;
+                    document.getElementById('current_image').src = imageURL;
+                }
+            };
+            xhr.open('GET', 'get_image_url.php?post_id=' + selectedPostId, true);
+            xhr.send();
+        });
+    </script>
 </body>
 </html>
+
