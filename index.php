@@ -16,16 +16,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-  <div id="google_translate_element"></div>
-    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script> 
-    function googleTranslateElementInit(){
-     new google.translate.TranslateElement(
-        {pageLanguage:'en'},
-        'google_translate_element'
-     );
-    }
-        </script>
+ 
 
 
 
@@ -72,7 +63,14 @@
   </form>
 
    <!-- Dropdown për zgjedhjen e gjuhës -->
-  
+   <div class="language-selector">
+  <select onchange="changeLanguage(this.value)" style="font-size: 15px; padding: 10px;">
+    <option value="en">🇬🇧 English</option>
+    <option value="sq">🇦🇱 Shqip</option>
+    <option value="pt">🇵🇹 Português</option>
+    <option value="it">🇮🇹 Italiano</option>
+  </select>
+</div>
 
 
 </header>
@@ -185,15 +183,20 @@
           <video src="images/about-vid.mp4" loop muted autoplay></video>
         </div>
 
-        <div class="content">
-          <h3>We will provide you the best work which you dreamt for!</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas et
-            vero mollitia nemo corporis consequatur aspernatur distinctio
-            dignissimos velit nam.
-          </p>
-          <a href="#services" class="btn">read more</a>
-        </div>
+        <div class="content text-center">
+          <h4 data-translate="professionalismOffer">We offer our professionalism to all Italians who want to immigrate to Kosovo</h4>
+          <p data-translate="expertiseDescription">Our professional expertise can assist you in the following areas:</p>
+          <ul>
+            <li data-translate="buyProperty">Buy a house, apartment, villa, land, and more</li>
+            <li data-translate="construction">Construction of personalized houses and villas</li>
+            <li data-translate="licenseConversion">Convert your driving license</li>
+            <li data-translate="residenceRegistration">Register your residence</li>
+            <li data-translate="carTransfer">Transfer your car with plates to Kosovo</li>
+            <li data-translate="otherServices">And many other services...</li>
+          </ul>
+          <p data-translate="contactUs">Do not hesitate to contact us.</p>
+          
+          </div>
       </div>
 
       <div class="box-container">
