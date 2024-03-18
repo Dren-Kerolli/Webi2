@@ -48,8 +48,16 @@
     <div id="info-btn" class="fas fa-info-circle" data-translate="info"></div>
         <div id="login-btn" class="fas fa-user " data-translate="login"></div>
     <div id="search-btn" class="fas fa-search d-none" data-translate="search">
-
     </div>
+
+        <form action="admin_panel.php" class="login-form" method="POST">
+    <h3>Login Form</h3>
+    <input type="email" name="email" placeholder="Enter your email" class="box" />
+    <input type="password" name="password" placeholder="Enter your password" class="box" />
+    <input type="submit" name="submit" value="Login now" class="btn" />
+</form>
+
+    <div id="search-btn" class="fas fa-search d-none" data-translate="search"></div>
   </div>
 
   <form action="" class="search-form">
@@ -64,14 +72,7 @@
   </form>
 
    <!-- Dropdown për zgjedhjen e gjuhës -->
-   <div class="language-selector">
-  <select onchange="changeLanguage(this.value)" style="font-size: 15px; padding: 10px;">
-    <option value="en">🇬🇧 English</option>
-    <option value="sq">🇦🇱 Shqip</option>
-    <option value="pt">🇵🇹 Português</option>
-    <option value="it">🇮🇹 Italiano</option>
-  </select>
-</div>
+  
 
 
 </header>
@@ -177,29 +178,23 @@
     <!-- about section starts  -->
 
     <section class="about" id="about">
-      <h1 data-translate="about" class="heading">about us</h1>
+      <h1 class="heading">about us</h1>
 
       <div class="row">
-          <div class="video">
-            <video src="images/about-vid.mp4" loop muted autoplay></video>
-          </div>
-
-          <div class="content">
-          <h4 data-translate="professionalismOffer">We offer our professionalism to all Italians who want to immigrate to Kosovo</h4>
-          <p data-translate="expertiseDescription">Our professional expertise can assist you in the following areas:</p>
-          <ul>
-            <li data-translate="buyProperty">Buy a house, apartment, villa, land, and more</li>
-            <li data-translate="construction">Construction of personalized houses and villas</li>
-            <li data-translate="licenseConversion">Convert your driving license</li>
-            <li data-translate="residenceRegistration">Register your residence</li>
-            <li data-translate="carTransfer">Transfer your car with plates to Kosovo</li>
-            <li data-translate="otherServices">And many other services...</li>
-          </ul>
-          <p data-translate="contactUs">Do not hesitate to contact us.</p>
-          
-          </div>
+        <div class="video">
+          <video src="images/about-vid.mp4" loop muted autoplay></video>
         </div>
 
+        <div class="content">
+          <h3>We will provide you the best work which you dreamt for!</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas et
+            vero mollitia nemo corporis consequatur aspernatur distinctio
+            dignissimos velit nam.
+          </p>
+          <a href="#services" class="btn">read more</a>
+        </div>
+      </div>
 
       <div class="box-container">
         <div class="box">
@@ -292,81 +287,75 @@
       <h1 class="heading">our projects</h1>
 
       <div class="box-container">
-        <a href="images/photos/images.jpeg" class="box">
+        <a href="images/project-1.jpg" class="box">
           <div class="image">
-            <img src="images/photos/images.jpeg" alt="" />
+            <img src="images/project-1.jpg" alt="" />
           </div>
           <div class="content">
             <div class="info">
-              <h3 data-translate="pharmaceuticalFactories">Pharmaceutical Factories</h3>
-              <p data-translate="constructiondesign">construction and design</p>
+              <h3>dream home</h3>
+              <p>construction, design</p>
             </div>
-            <i class="fas fa-plus"></i>
           </div>
         </a>
 
-        <a href="images/photos/plastic.jpeg" class="box">
+        <a href="images/project-2.jpg" class="box">
           <div class="image">
-            <img src="images/photos/plastic.jpeg" alt="" />
+            <img src="images/project-2.jpg" alt="" />
           </div>
           <div class="content">
             <div class="info">
-            <h3 data-translate="plasticProduction">Plastic Production</h3>
-            <p data-translate="constructiondesign">construction and design</p>
+              <h3>dream home</h3>
+              <p>construction, design</p>
             </div>
-            <i class="fas fa-plus"></i>
           </div>
         </a>
 
-        <a href="images/photos/villa.jpeg" class="box">
+        <a href="images/project-3.jpg" class="box">
           <div class="image">
-            <img src="images/photos/villa.jpeg" alt="" />
+            <img src="images/project-3.jpg" alt="" />
           </div>
           <div class="content">
             <div class="info">
-            <h3 data-translate="ConstructionProjects">Construction Projects</h3>
-              <p data-translate="constructiondesign">construction and design</p>
+              <h3>dream home</h3>
+              <p>construction, design</p>
             </div>
-            <i class="fas fa-plus"></i>
           </div>
         </a>
 
         <a href="images/project-4.jpg" class="box">
           <div class="image">
-            <img src="images/photos/stone.jpeg" alt="" />
+            <img src="images/project-4.jpg" alt="" />
           </div>
           <div class="content">
             <div class="info">
-              <h3 data-translate="CarparoandLeccese">Carparo and Leccese</h3>
-              <p data-translate="constructiondesign">construction and design</p>
+              <h3>dream home</h3>
+              <p>construction, design</p>
             </div>
-            <i class="fas fa-plus"></i>
           </div>
         </a>
 
-        <a href="images/photos/realestate.jpeg" class="box">
+        <a href="images/project-5.jpg" class="box">
           <div class="image">
-            <img src="images/photos/realestate.jpeg" alt="" />
+            <img src="images/project-5.jpg" alt="" />
           </div>
           <div class="content">
             <div class="info">
-            <h3 data-translate="EstateAgency">Real Estate Agency</h3>
-              <p data-translate="estate">Buy, sell, rent</p>
+              <h3>dream home</h3>
+              <p>construction, design</p>
             </div>
-            <i class="fas fa-plus"></i>
           </div>
         </a>
 
-        <a href="images/photos/plane.jpeg" class="box">
+        <a href="images/project-6.jpg" class="box">
           <div class="image">
-            <img src="images/photos/plane.jpeg" alt="" />
+            <img src="images/project-6.jpg" alt="" />
           </div>
           <div class="content">
             <div class="info">
-            <h3 data-translate="hospital">Planifikim i Spitaleve</h3>
-              <p>construction and design</p>
+              <h3>dream home</h3>
+              <p>construction, design</p>
             </div>
-            <i class="fas fa-plus"></i>
           </div>
         </a>
       </div>
@@ -374,28 +363,6 @@
 
     <!-- projects section ends -->
    
-    <section class="logo-container">
-      <div class="swiper logo-slider">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide slide" style="height:100px" >
-            <img src="images/photos/1.jpg" style="height:100px" alt="" />
-          </div>
-          <div class="swiper-slide slide"style="height:100px" >
-            <img src="images/photos/2.jpg" alt=""style="height:100px"  />
-          </div>
-          <div class="swiper-slide slide"style="height:100px" >
-            <img src="images/photos/3.jpg" alt="" style="height:100px" />
-          </div>
-          <div class="swiper-slide slide"style="height:100px" >
-            <img src="images/photos/4.jpg" alt="" style="height:100px" />
-          </div>
-          <div class="swiper-slide slide"style="height:100px" >
-            <img src="images/photos/5.png" alt="" style="height:100px" />
-          </div>
-         
-        </div>
-      </div>
-    </section>
     <!-- reviews section starts  -->
 
     <section class="reviews">
@@ -552,41 +519,23 @@
           loading="lazy"
         ></iframe>
 
-        <form id="contactForm" method="post">
-    <input type="text" name="name" placeholder="name" class="box" data-translate="name" required />
-    <input type="email" name="email" placeholder="email" class="box" data-translate="email" required />
-    <input type="tel" name="phone" placeholder="phone" class="box" data-translate="phone" />
-    <textarea name="message" placeholder="message" class="box" cols="30" rows="10" data-translate="message" required></textarea>
-    <button type="button" class="btn" onclick="submitForm()">send message</button>
-    <div id="response"></div>
-</form>
+        <form action="">
+          <h3 data-translate="get in touch">get in touch</h3>
+          <input type="text" placeholder="name" class="box" data-translate="name" />
+          <input type="email" placeholder="email" class="box" data-translate="email" />
+          <input type="number" placeholder="phone" class="box" data-translate="phone" />
+          <textarea
+            name=""
+            placeholder="message"
+            class="box"
+            id=""
+            cols="30"
+            rows="10"
+            data-translate="message"
+          ></textarea>
+          <button type="submit" class="btn" data-translate="send message">send message</button>
 
-<script>
-    function submitForm() {
-        var formData = new FormData(document.getElementById("contactForm"));
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    document.getElementById("response").innerHTML = xhr.responseText;
-                    clearForm();
-                } else {
-                    document.getElementById("response").innerHTML = "Error: " + xhr.status;
-                }
-            }
-        };
-        xhr.open("POST", "submit.php", true);
-        xhr.send(formData);
-    }
-
-    function clearForm() {
-        document.getElementById("contactForm").reset();
-    }
-</script>
-
-    
-
-    
+        </form>
       </div>
     </section>
 
