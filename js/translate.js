@@ -356,10 +356,10 @@ function changeLanguage(language) {
       },
 
       "bestservice": {
-        "en": "Antaura Construction Company offers excellent services in the field of construction. We are committed to building your projects with high quality and according to your needs.",
-        "sq": "Kompania Ndërtimore Antaura ofron shërbime të shkëlqyera në fushën e ndërtimit. Ne jemi përkushtuar për të ndërtuar projektet tuaja me cilësi të lartë dhe në përputhje me nevojat tuaja.",
-        "pt": "A empresa de construção Antaura oferece excelentes serviços no campo da construção. Estamos comprometidos em construir seus projetos com alta qualidade e de acordo com suas necessidades.",
-        "it": "La società edile Antaura offre eccellenti servizi nel campo della costruzione. Siamo impegnati a costruire i vostri progetti con alta qualità e secondo le vostre esigenze."
+        "en": "Antaura Company offers excellent services in the field of construction. We are committed to building your projects with high quality and according to your needs.",
+        "sq": "Kompania  Antaura ofron shërbime të shkëlqyera në fushën e ndërtimit. Ne jemi përkushtuar për të ndërtuar projektet tuaja me cilësi të lartë dhe në përputhje me nevojat tuaja.",
+        "pt": "A empresa de Antaura oferece excelentes serviços no campo da construção. Estamos comprometidos em construir seus projetos com alta qualidade e de acordo com suas necessidades.",
+        "it": "La società Antaura offre eccellenti servizi nel campo della costruzione. Siamo impegnati a costruire i vostri progetti con alta qualità e secondo le vostre esigenze."
       },
       "weprovide": {
         "en": "we provide best service",
