@@ -64,12 +64,7 @@
   </form>
 
    <!-- Dropdown për zgjedhjen e gjuhës -->
-   <div class="language-selector">
-  <select onchange="changeLanguage(this.value)" style="font-size: 15px; padding: 10px;">
-    <option value="en">🇬🇧 English</option>
-    <option value="sq">🇦🇱 Shqip</option>
-  </select>
-</div>
+  
 
 
 </header>
@@ -545,10 +540,6 @@
 
 
 
-    <?php
-include 'blog.php';
-
-?>
 
     <!-- client logo section starts -->
 
