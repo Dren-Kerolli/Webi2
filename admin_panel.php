@@ -104,9 +104,72 @@
             margin-top: 20px;
             font-weight: bold;
         }
+        
+      .header {
+        display: none;
+      }
+
+     .preloaderBg {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+      }
+
+      .preloader {
+        position: absolute; /* Position the logo relative to its parent */
+        top: 50%; /* Move the logo 50% from the top of its parent */
+        left: 50%; /* Move the logo 50% from the left of its parent */
+        transform: translate(-50%, -50%); /* Center the logo */
+        background: url(images/post.png) no-repeat center;
+        background-size: 150px;
+        width: 150px; /* Adjusted width to fit inside the circle */
+        height: 150px; /* Adjusted height to fit inside the circle */
+      }
+
+      .preloader2 {
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #f00;
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        animation: spin 1s ease-in-out infinite;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+    
     </style>
 </head>
-<body>
+
+<body onload="preloader()">
+  
+  <div class="preloaderBg" id="preloader">
+    <div class="preloader"></div>
+    <div class="preloader2"></div>
+  </div>
+
+  <script>
+    var preloadTime;
+
+    function preloader() {
+      preloadTime = setTimeout(showPage, 2000); // Adjusted delay to 1 second (1000 milliseconds)
+    }
+
+    function showPage() {
+      document.getElementById("preloader").style.display = "none";
+      document.querySelector("header").style.display = "flex"; 
+    }
+  </script>
     <div class="sidebar">
         <h2>Admin Panel</h2>
         <ul>

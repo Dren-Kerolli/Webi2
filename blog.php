@@ -87,9 +87,74 @@
         .change-language-btn:hover {
             background-color: #45a049;
         }
+
+      .header {
+        display: none;
+      }
+
+     .preloaderBg {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+      }
+
+      .preloader {
+        position: absolute; /* Position the logo relative to its parent */
+        top: 50%; /* Move the logo 50% from the top of its parent */
+        left: 50%; /* Move the logo 50% from the left of its parent */
+        transform: translate(-50%, -50%); /* Center the logo */
+        background: url(images/post.png) no-repeat center;
+        background-size: 150px;
+        width: 150px; /* Adjusted width to fit inside the circle */
+        height: 150px; /* Adjusted height to fit inside the circle */
+      }
+
+      .preloader2 {
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #f00;
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        animation: spin 1s ease-in-out infinite;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+    
     </style>
+
+
 </head>
-<body>
+
+<body onload="preloader()">
+  
+  <div class="preloaderBg" id="preloader">
+    <div class="preloader"></div>
+    <div class="preloader2"></div>
+  </div>
+
+  <script>
+    var preloadTime;
+
+    function preloader() {
+      preloadTime = setTimeout(showPage, 2000); // Adjusted delay to 1 second (1000 milliseconds)
+    }
+
+    function showPage() {
+      document.getElementById("preloader").style.display = "none";
+      document.querySelector("header").style.display = "flex"; 
+    }
+  </script>
 <div id="google_translate_element"></div>
     <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script> 
@@ -102,12 +167,12 @@
         </script>
 
 <header class="header">
-  <a href="index.php" class="logo"><img src="images/post.png" class="img-fluid" style="width:120px;height:auto" alt=""></span></a>
+    <a href="index.php" class="logo"><img src="images/post.png" class="img-fluid" style="width:120px;height:auto" alt=""></a>
 
 
 
   <nav class="navbar">
-    <a href="#home" data-translate="home">home</a>
+    <a href="index.php" data-translate="home">home</a>
     <a href="#about" data-translate="about">about</a>
     <a href="#services" data-translate="services">services</a>
     <a href="#projects" data-translate="projects">projects</a>
@@ -115,11 +180,19 @@
     <a href="#contact" data-translate="contact">contact</a>
     <a href="blog.php" data-translate="blogs">blogs</a>
   </nav>
- 
   <div class="icons">
     <div id="menu-btn" class="fas fa-bars" data-translate="menu"></div>
     <div id="info-btn" class="fas fa-info-circle" data-translate="info"></div>
         <div id="login-btn" class="fas fa-user " data-translate="login"></div>
+    <div id="search-btn" class="fas fa-search d-none" data-translate="search">
+    </div>
+
+        <form action="admin_panel.php" class="login-form" method="POST">
+    <h3>Login Form</h3>
+    <input type="email" name="email" placeholder="Enter your email" class="box" />
+    <input type="password" name="password" placeholder="Enter your password" class="box" />
+    <input type="submit" name="submit" value="Login now" class="btn" />
+</form>
 
     <div id="search-btn" class="fas fa-search d-none" data-translate="search"></div>
   </div>
@@ -148,7 +221,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "construction_db";
+$dbname = "testdb";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

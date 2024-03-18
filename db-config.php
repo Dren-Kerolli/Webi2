@@ -6,7 +6,7 @@ class Dbconfig
     public $dbhost="localhost";
     public $dbuser="root";
     public $dbpassword="";
-    public $dbname="construction_db";
+    public $dbname="testdb";
 
 // function to connect to database
     function connect_db(){

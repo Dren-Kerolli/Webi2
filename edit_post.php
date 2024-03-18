@@ -6,7 +6,7 @@ $message = ""; // Mesazhi që do të shfaqet pas dërgimit të suksesshëm të f
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "construction_db";
+$dbname = "testdb";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

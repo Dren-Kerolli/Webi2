@@ -14,19 +14,80 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js" integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .header {
+        display: none;
+      }
+
+     .preloaderBg {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+      }
+
+      .preloader {
+        position: absolute; /* Position the logo relative to its parent */
+        top: 50%; /* Move the logo 50% from the top of its parent */
+        left: 50%; /* Move the logo 50% from the left of its parent */
+        transform: translate(-50%, -50%); /* Center the logo */
+        background: url(images/post.png) no-repeat center;
+        background-size: 150px;
+        width: 150px; /* Adjusted width to fit inside the circle */
+        height: 150px; /* Adjusted height to fit inside the circle */
+      }
+
+      .preloader2 {
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #f00;
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        animation: spin 1s ease-in-out infinite;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+    </style>
   </head>
-  <body>
- 
+  <body onload="preloader()">
+  
+  <div class="preloaderBg" id="preloader">
+    <div class="preloader"></div>
+    <div class="preloader2"></div>
+  </div>
+
+  <script>
+    var preloadTime;
+
+    function preloader() {
+      preloadTime = setTimeout(showPage, 2000); // Adjusted delay to 1 second (1000 milliseconds)
+    }
+
+    function showPage() {
+      document.getElementById("preloader").style.display = "none";
+      document.querySelector("header").style.display = "flex"; 
+    }
+  </script>
 
 
 
     <header class="header">
-  <a href="index.php" class="logo"><img src="images/post.png" class="img-fluid" style="width:120px;height:auto" alt=""></span></a>
+    <a href="index.php" class="logo"><img src="images/post.png" class="img-fluid" style="width:120px;height:auto" alt=""></a>
 
 
 
   <nav class="navbar">
-    <a href="#home" data-translate="home">home</a>
+    <a href="index.php" data-translate="home">home</a>
     <a href="#about" data-translate="about">about</a>
     <a href="#services" data-translate="services">services</a>
     <a href="#projects" data-translate="projects">projects</a>

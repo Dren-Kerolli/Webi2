@@ -1,9 +1,8 @@
-
 <?php
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "construction_db";
+$dbname = "testdb";
 
 // Krijoni lidhjen me bazën e të dhënave
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -149,7 +148,7 @@ th {
            $servername = "localhost";
            $username = "root";
            $password = "";
-           $dbname = "construction_db";
+           $dbname = "testdb";
            
            // Krijoni lidhjen me bazën e të dhënave
            $conn = new mysqli($servername, $username, $password, $dbname);
