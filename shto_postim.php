@@ -1,4 +1,3 @@
-<!-- index.php -->
 <?php
 require_once 'vendor/autoload.php'; // Përfshini shtesën për Google Translate API
 
@@ -16,104 +15,189 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Lidhja dështoi: " . $conn->connect_error);
     }
 
-    $title = $_POST['title'];
-    $content = $_POST['content'];
-    $foto = file_get_contents($_FILES['foto']['tmp_name']);
+    // Kontrolloni nëse variablat janë të inicializuara dhe jo-tombe
+    if(isset($_POST['title']) && isset($_POST['content']) && isset($_FILES['foto']['tmp_name'])) {
+        $title_sq = $_POST['title'];
+        $content_sq = $_POST['content'];
+        $foto = file_get_contents($_FILES['foto']['tmp_name']);
 
-    // Përkthe tekstet në gjuhët e zgjedhura (anglisht, italisht, spanjisht)
-    $translator = new Stichoza\GoogleTranslate\GoogleTranslate();
-    $translator->setSource('auto');
-    $translator->setTarget('en');
+        // Përkthe tekstet në gjuhët e zgjedhura (anglisht, italisht, spanjisht)
+        $translator = new Stichoza\GoogleTranslate\GoogleTranslate();
+        $translator->setSource('auto');
+        $translator->setTarget('en');
 
-    $title_en = $translator->translate($title);
-    $content_en = $translator->translate($content);
+        $title_en = $translator->translate($title_sq);
+        $content_en = $translator->translate($content_sq);
 
-    $translator->setTarget('it');
-    $title_it = $translator->translate($title);
-    $content_it = $translator->translate($content);
+        $translator->setTarget('it');
+        $title_it = $translator->translate($title_sq);
+        $content_it = $translator->translate($content_sq);
 
-    $translator->setTarget('es');
-    $title_es = $translator->translate($title);
-    $content_es = $translator->translate($content);
+        $translator->setTarget('es');
+        $title_es = $translator->translate($title_sq);
+        $content_es = $translator->translate($content_sq);
 
-    $sql = "INSERT INTO blog_posts (title_sq, title_en, title_it, title_es, content_sq, content_en, content_it, content_es, foto) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssssssss", $title, $title_en, $title_it, $title_es, $content, $content_en, $content_it, $content_es, $foto);
+        $sql = "INSERT INTO blog_posts (title_sq, title_en, title_it, title_es, content_sq, content_en, content_it, content_es, foto) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sssssssss", $title_sq, $title_en, $title_it, $title_es, $content_sq, $content_en, $content_it, $content_es, $foto);
 
-    if ($stmt->execute()) {
-        $message = "Postimi është shtuar me sukses!";
+        if ($stmt->execute()) {
+            $message = "Postimi është shtuar me sukses!";
+        } else {
+            $message = "Gabim gjatë shtimit të postimit: " . $conn->error;
+        }
+
+        $stmt->close();
     } else {
-        $message = "Gabim gjatë shtimit të postimit: " . $conn->error;
+        $message = "Gabim: Ju lutemi plotësoni të gjitha fushat!";
     }
 
-    $stmt->close();
     $conn->close();
 }
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shto Postim</title>
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #2c3e50;
+    padding-top: 20px;
+}
+
+.sidebar h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background: #34495e;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.content h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.content p {
+    color: #666;
+}
+
 .container {
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 100%; /* Shkalla maksimale e kontejnerit */
+    margin: 50px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: #f9f9f9;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
+.form-group {
+    margin-bottom: 20px;
 }
 
-input[type="text"],
-textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+.form-control {
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-button {
-    padding: 10px 20px;
+.btn-primary {
     background-color: #4CAF50;
-    color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
     cursor: pointer;
+    width: 100%; /* Ndryshimi: Butoni mbush tërësinë e prindit */
 }
 
-button:hover {
+.btn-primary:hover {
     background-color: #45a049;
 }
 
-#response {
+.response {
     margin-top: 20px;
     font-weight: bold;
 }
-</style>
+       
+    </style>
 </head>
 <body>
-<div class="container">
-    <h2>Shto Postim</h2>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" enctype="multipart/form-data">
-        <label for="title">Titulli:</label>
-        <input type="text" id="title" name="title" required>
-        
-        <label for="content">Përmbajtja:</label>
-        <textarea id="content" name="content" rows="4" required></textarea>
-        
-        <label for="foto">Foto:</label>
-        <input type="file" id="foto" name="foto" accept="image/*" required>
-        
-        <button type="submit">Posto</button>
-    </form>
-    <div id="response"><?php echo $message; ?></div>
-</div>
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <ul>
+        <li><a href="shto_postim.php">Add Post</a></li>
+            <li><a href="edit_post.php">Edit Post</a></li>
+            <li><a href="delete_postime.php">Delete Post</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h2>Dashboard</h2>
+        <p>Welcome to the admin panel. Here you can manage your website.</p>
+
+        <!-- Forma për shtimin e postimeve -->
+        <div class="container">
+            <h2 class="text-center">Shto Postim</h2>
+            <form action="shto_postim.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">Titulli:</label>
+                    <input type="text" class="form-control" id="title" name="title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="content">Përmbajtja:</label>
+                    <textarea class="form-control" id="content" name="content" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="foto">Foto:</label>
+                    <input type="file" class="form-control-file" id="foto" name="foto" accept="image/*" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Posto</button>
+            </form>
+            <div class="response text-center"><?php echo $message; ?></div>
+        </div>
+    </div>
 </body>
 </html>

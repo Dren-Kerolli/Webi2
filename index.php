@@ -49,6 +49,13 @@
     <div id="info-btn" class="fas fa-info-circle" data-translate="info"></div>
         <div id="login-btn" class="fas fa-user " data-translate="login"></div>
 
+        <form action="admin_panel.php" class="login-form" method="POST">
+    <h3>Login Form</h3>
+    <input type="email" name="email" placeholder="Enter your email" class="box" />
+    <input type="password" name="password" placeholder="Enter your password" class="box" />
+    <input type="submit" name="submit" value="Login now" class="btn" />
+</form>
+
     <div id="search-btn" class="fas fa-search d-none" data-translate="search"></div>
   </div>
 
@@ -288,7 +295,6 @@
               <h3>dream home</h3>
               <p>construction, design</p>
             </div>
-            <i class="fas fa-plus"></i>
           </div>
         </a>
 
@@ -301,7 +307,6 @@
               <h3>dream home</h3>
               <p>construction, design</p>
             </div>
-            <i class="fas fa-plus"></i>
           </div>
         </a>
 
@@ -314,7 +319,6 @@
               <h3>dream home</h3>
               <p>construction, design</p>
             </div>
-            <i class="fas fa-plus"></i>
           </div>
         </a>
 
@@ -327,7 +331,6 @@
               <h3>dream home</h3>
               <p>construction, design</p>
             </div>
-            <i class="fas fa-plus"></i>
           </div>
         </a>
 
@@ -340,7 +343,6 @@
               <h3>dream home</h3>
               <p>construction, design</p>
             </div>
-            <i class="fas fa-plus"></i>
           </div>
         </a>
 
@@ -353,7 +355,6 @@
               <h3>dream home</h3>
               <p>construction, design</p>
             </div>
-            <i class="fas fa-plus"></i>
           </div>
         </a>
       </div>
