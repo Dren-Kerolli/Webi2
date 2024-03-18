@@ -128,11 +128,12 @@
             style="background: url(images/home-slide-1.jpg) no-repeat"
           >
             <div class="content">
-              <h3>we provide best service</h3>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Aspernatur beatae iusto pariatur laborum magnam eos!
+              <h3 data-translate="weprovide" >we provide best service</h3>
+              <p data-translate="bestservice">Antaura Construction Company offers excellent services in 
+                the field of construction. We are committed to building your
+                 projects with high quality and according to your needs.
               </p>
+
               <a href="#about" class="btn">get started</a>
             </div>
           </section>
@@ -143,9 +144,10 @@
           >
             <div class="content">
               <h3>making dream come to life</h3>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Aspernatur beatae iusto pariatur laborum magnam eos!
+              <p data-translate="dream">
+              If you are looking for a reliable partner for your construction project,
+               contact us today for a free consultation. We are here to assist in
+                realizing your building dream with excellent and professional service.
               </p>
               <a href="#about" class="btn">get started</a>
             </div>
@@ -156,10 +158,11 @@
             style="background: url(images/home-slide-3.jpg) no-repeat"
           >
             <div class="content">
-              <h3>from concept to creation</h3>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Aspernatur beatae iusto pariatur laborum magnam eos!
+              <h3 data-translate="conceptcreate">from concept to creation</h3>
+              <p data-translate="fromconcept">
+              Kompania Ndërtimore Antaura ofron një rrugë të qartë dhe efikase nga koncepti 
+              në krijim. Përdorimi i teknologjisë së fundit dhe ekipi ynë i përvojuar
+              sigurojnë që projektet të materializohen me sukses.
               </p>
               <a href="#about" class="btn">get started</a>
             </div>

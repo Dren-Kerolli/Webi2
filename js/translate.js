@@ -347,7 +347,39 @@ function changeLanguage(language) {
         "sq": "Planifikim i Spitaleve",
         "pt": "Planejamento Hospitalar",
         "it": "Pianificazione Ospedaliera"
-      }
+      },
+      "dream": {
+        "en": "If you are looking for a reliable partner for your construction project, contact us today for a free consultation. We are here to assist in realizing your building dream with excellent and professional service.",
+        "sq": "Nëse jeni në kërkim të një partneri të besueshëm për projektin tuaj të ndërtimit, na kontaktoni sot për një konsultim të lirë. Ne jemi këtu për të ndihmuar në realizimin e ëndrrës suaj të ndërtimit me një shërbim të shkëlqyer dhe profesionist.",
+        "pt": "Se você está procurando um parceiro confiável para o seu projeto de construção, entre em contato conosco hoje para uma consulta gratuita. Estamos aqui para ajudar na realização do seu sonho de construção com um serviço excelente e profissional.",
+        "it": "Se stai cercando un partner affidabile per il tuo progetto di costruzione, contattaci oggi per una consulenza gratuita. Siamo qui per aiutare a realizzare il tuo sogno di costruzione con un servizio eccellente e professionale."
+      },
+
+      "bestservice": {
+        "en": "Antaura Construction Company offers excellent services in the field of construction. We are committed to building your projects with high quality and according to your needs.",
+        "sq": "Kompania Ndërtimore Antaura ofron shërbime të shkëlqyera në fushën e ndërtimit. Ne jemi përkushtuar për të ndërtuar projektet tuaja me cilësi të lartë dhe në përputhje me nevojat tuaja.",
+        "pt": "A empresa de construção Antaura oferece excelentes serviços no campo da construção. Estamos comprometidos em construir seus projetos com alta qualidade e de acordo com suas necessidades.",
+        "it": "La società edile Antaura offre eccellenti servizi nel campo della costruzione. Siamo impegnati a costruire i vostri progetti con alta qualità e secondo le vostre esigenze."
+      },
+      "weprovide": {
+        "en": "we provide best service",
+        "sq": "Ne ofrojmë shërbim të mirë",
+        "pt": "Nós fornecemos o melhor serviço",
+        "it": "Noi forniamo il miglior servizio"
+      },
+      "fromconcept": {
+        "en": "Antaura Construction Company offers a clear and efficient path from concept to creation. The use of the latest technology and our experienced team ensure that projects are successfully realized.",
+        "sq": "  Kompania Ndërtimore Antaura ofron një rrugë të qartë dhe efikase nga koncepti në krijim. Përdorimi i teknologjisë së fundit dhe ekipi ynë i përvojuarsigurojnë që projektet të materializohen me sukses.",
+        "pt": "A empresa de construção Antaura oferece um caminho claro e eficiente do conceito à criação. O uso da tecnologia mais recente e a nossa equipe experiente garantem que os projetos sejam realizados com sucesso.",
+        "it": "La società edile Antaura offre un percorso chiaro ed efficiente dal concetto alla creazione. L'uso della tecnologia più recente e il nostro team esperto garantiscono che i progetti siano realizzati con successo."
+      },
+      
+      "conceptcreate": {
+        "en": "from concept to creation",
+        "sq": "nga koncepti në krijim",
+        "pt": "do conceito à criação",
+        "it": "dal concetto alla creazione"
+      },
     }
     
 
